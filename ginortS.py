@@ -1,6 +1,20 @@
-s = input()
-odd=lambda x:int(x)%2==0
-upper=lambda x:x.isupper()
-lower=lambda x:x.islower()
-digit=lambda x:x.isdigit()
-print("".join(sorted(list(filter(lower,s))) + sorted(list(filter(upper,s))) + sorted(list(filter(digit,s)), key=odd)))
+s = list(input())
+
+lowerLetters=[]
+upperLetters=[]
+oddNumbers = []
+evenNumbers = []
+
+for l in s:
+    if l.isalpha():
+        if l.islower():
+            lowerLetters.append(l)
+        else:
+            upperLetters.append(l)
+    else:
+        if int(l)%2 == 0:
+            evenNumbers.append(l)
+        else:
+            oddNumbers.append(l)
+
+print("".join(sorted(lowerLetters)+sorted(upperLetters)+sorted(oddNumbers)+sorted(evenNumbers)))
