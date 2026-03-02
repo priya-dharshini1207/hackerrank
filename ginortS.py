@@ -1,10 +1,8 @@
 s = list(input())
-
 lowerLetters=[]
 upperLetters=[]
 oddNumbers = []
 evenNumbers = []
-
 for l in s:
     if l.isalpha():
         if l.islower():
@@ -16,5 +14,4 @@ for l in s:
             evenNumbers.append(l)
         else:
             oddNumbers.append(l)
-
 print("".join(sorted(lowerLetters)+sorted(upperLetters)+sorted(oddNumbers)+sorted(evenNumbers)))
